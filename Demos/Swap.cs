@@ -12,6 +12,7 @@ namespace Int
             b=a^b;
             a=a^b;
             Console.WriteLine("After swapping: a = " + a + ", b = " + b);
+
         }
     }
 }
