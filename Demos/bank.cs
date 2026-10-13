@@ -10,20 +10,17 @@ class Bank
         string name = Console.ReadLine() ?? "";
         if (name == "")
         {
-            Console.WriteLine("Invalid account name. Please try again.");
+            Console.WriteLine("Invalid account name.");
             return;
         }
         Console.WriteLine($"Hello, {name}!");
-        Console.Write("Please enter your 4-digit PIN: ");
+        Console.Write("Please enter your PIN: ");
 
         if (Convert.ToInt32(Console.ReadLine()) != pin)
         {
             Console.WriteLine("Incorrect PIN. Access denied.");
             return;
         }
-
-        Console.WriteLine("Access granted.");
-
         Console.WriteLine("1. Check Balance");
         Console.WriteLine("2. Deposit Money");
         Console.WriteLine("3. Withdraw Money");
@@ -40,12 +37,11 @@ class Bank
                 if (Convert.ToDouble(Console.ReadLine()) is double deposit && deposit > 0)
                 {
                     balance += deposit;
-                    Console.WriteLine(
-                        $"Deposited ${deposit:F2}. New balance: ${balance:F2}");
+                    Console.WriteLine($"Deposited money is  ${deposit:F2}. New balance: ${balance:F2}");
                 }
                 else
                 {
-                    Console.WriteLine("Enter a valid positive amount.");
+                    Console.WriteLine("Enter a valid amount.");
                 }
                 break;
             case 3:
@@ -55,8 +51,7 @@ class Bank
                     if (withdraw <= balance)
                     {
                         balance -= withdraw;
-                        Console.WriteLine(
-                            $"Withdrew ${withdraw:F2}. New balance: ${balance:F2}");
+                        Console.WriteLine($"Withdraw Amount is  ${withdraw:F2}. New balance: ${balance:F2}");
                     }
                     else
                     {
