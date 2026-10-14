@@ -5,18 +5,18 @@ class Program
     static void Main()
     {
         Console.Write("Enter a string or number: ");
-        string a = Console.ReadLine() ?? "";
+        string a  = Console.ReadLine() ?? "";
         if (int.TryParse(a, out int num))
         {
-            int a = num;
-            int aa = 0;
+            int origi = num;
+            int reversed = 0;
             while (num > 0)
             {
                 int digit = num % 10;
-                aa = aa * 10 + digit;
+                reversed = reversed * 10 + digit;
                 num /= 10;
             }
-            if (a == aa)
+            if (origi == reversed)
                 Console.WriteLine("The number is a palindrome.");
             else
                 Console.WriteLine("The number is not a palindrome.");
