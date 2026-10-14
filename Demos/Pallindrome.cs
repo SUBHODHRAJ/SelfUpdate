@@ -8,15 +8,15 @@ class Program
         string a = Console.ReadLine() ?? "";
         if (int.TryParse(a, out int num))
         {
-            int ognum = num;
-            int reversedNum = 0;
+            int a = num;
+            int aa = 0;
             while (num > 0)
             {
                 int digit = num % 10;
-                reversedNum = reversedNum * 10 + digit;
+                aa = aa * 10 + digit;
                 num /= 10;
             }
-            if (ognum == reversedNum)
+            if (a == aa)
                 Console.WriteLine("The number is a palindrome.");
             else
                 Console.WriteLine("The number is not a palindrome.");
