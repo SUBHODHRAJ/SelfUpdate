@@ -4,10 +4,10 @@ class Layers
 {
     static void Main()
     {
-        int[,,] evenOdd = new int[2, 4, 4];
+        int[,,] evenOdd = new int[4, 4, 4];
         for (int i = 0; i < evenOdd.GetLength(0); i++)
         {
-            int num = i;
+            int num = i%2;
             for (int j = 0; j < evenOdd.GetLength(1); j++)
             {
                 for (int k = 0; k < evenOdd.GetLength(2); k++)
