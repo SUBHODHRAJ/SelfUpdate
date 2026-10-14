@@ -27,6 +27,5 @@ class StringDemo
         Console.WriteLine();        
         Console.WriteLine("UpperBound of the array: " + strs.GetUpperBound(0));
         Console.WriteLine("LowerBound of the array: " + strs.GetLowerBound(0));
-
     }
 }
