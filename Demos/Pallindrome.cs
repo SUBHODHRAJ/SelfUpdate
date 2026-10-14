@@ -16,15 +16,12 @@ class Program
                 reversed = reversed * 10 + digit;
                 num /= 10;
             }
-            if (origi == reversed)
-                Console.WriteLine("The number is a palindrome.");
-            else
-                Console.WriteLine("The number is not a palindrome.");
+            if (origi == reversed) Console.WriteLine("The number is a palindrome.");
+            else Console.WriteLine("The number is not a palindrome.");
         }
         else
         {
-            int l = 0;
-            int r = a.Length - 1;
+            int l = 0,r = a.Length - 1;
             while (l < r)
             {
                 if (a[l] != a[r])
