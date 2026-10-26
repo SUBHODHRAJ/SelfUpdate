@@ -1,11 +1,9 @@
 using System;
-
 interface INetflix
 {
     void WatchMovie(string name);
     void DownloadMovie(string name);
 }
-
 interface IAmazonPrime
 {
     void WatchMovie(string name);
@@ -30,7 +28,6 @@ class OTT : INetflix, IAmazonPrime, IDisneyPlus
         Console.WriteLine("Downloading movie from " + name);
     }
 }
-
 class Program
 {
     static void Main()
