@@ -26,7 +26,6 @@ class Teachers : Students
         displayDetails();
     }
 }
-
 class Department : Teachers
 {
     public string Dept_Name = "Computer Science and Engineering";
@@ -38,7 +37,6 @@ class Department : Teachers
     }
 
 }
-
 class Admin
 {
     static void Main()
