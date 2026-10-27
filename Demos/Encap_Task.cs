@@ -2,13 +2,13 @@ using System;
 
 class Student
 {
-    private string? name;
+    private string? Studentname;
     private int mark;
 
     public string? Name
     {
-        get { return name; }
-        set { name = value; }
+        get { return Studentname; }
+        set { Studentname = value; }
     }
 
     public int Mark
@@ -39,7 +39,7 @@ class Program
         Console.WriteLine("Student Name: " + s.Name);
         Console.WriteLine("Student Mark: " + s.Mark);
 
-        Console.Write("Enter Updated Mwark: ");
+        Console.Write("Enter Updated Mark: ");
         int Update_mark = Convert.ToInt32(Console.ReadLine());
         s.Mark = Update_mark;
         Console.WriteLine("Updated Mark: " + s.Mark);

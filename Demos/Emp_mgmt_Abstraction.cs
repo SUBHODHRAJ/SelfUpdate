@@ -29,12 +29,12 @@ class Program
 {
     static void Main()
     {
-        Employee e1 = new Manager();
-        Employee e2 = new Developer();
+        Employee emp1 = new Manager();
+        Employee emp2 = new Developer();
 
-        e1.Display();
-        e1.CalculateSalary();
+        emp1.Display();
+        emp1.CalculateSalary();
 
-        e2.CalculateSalary();
+        emp2.CalculateSalary();
     }
 }
