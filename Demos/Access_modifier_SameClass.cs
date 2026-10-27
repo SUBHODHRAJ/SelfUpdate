@@ -7,10 +7,10 @@ class AccessModifiers
         AccessModifiers am = new AccessModifiers();
 
         am.PublicMethod();
+        am.PrivateMethod();
         am.InternalMethod();
         am.InternalProtectedMethod();
         am.ProtectedMethod();
-        am.InternalProtectedMethod();
     }
 
     public void PublicMethod()
