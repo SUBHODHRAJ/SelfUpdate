@@ -1,0 +1,15 @@
+S:\UPS -- Training\Notes\Demos\AccessDemo\bin\Debug\net10.0\AccessDemo.exe
+S:\UPS -- Training\Notes\Demos\AccessDemo\bin\Debug\net10.0\AccessDemo.deps.json
+S:\UPS -- Training\Notes\Demos\AccessDemo\bin\Debug\net10.0\AccessDemo.runtimeconfig.json
+S:\UPS -- Training\Notes\Demos\AccessDemo\bin\Debug\net10.0\AccessDemo.dll
+S:\UPS -- Training\Notes\Demos\AccessDemo\bin\Debug\net10.0\AccessDemo.pdb
+S:\UPS -- Training\Notes\Demos\AccessDemo\obj\Debug\net10.0\AccessDemo.GeneratedMSBuildEditorConfig.editorconfig
+S:\UPS -- Training\Notes\Demos\AccessDemo\obj\Debug\net10.0\AccessDemo.AssemblyInfoInputs.cache
+S:\UPS -- Training\Notes\Demos\AccessDemo\obj\Debug\net10.0\AccessDemo.AssemblyInfo.cs
+S:\UPS -- Training\Notes\Demos\AccessDemo\obj\Debug\net10.0\AccessDemo.csproj.CoreCompileInputs.cache
+S:\UPS -- Training\Notes\Demos\AccessDemo\obj\Debug\net10.0\AccessDemo.sourcelink.json
+S:\UPS -- Training\Notes\Demos\AccessDemo\obj\Debug\net10.0\AccessDemo.dll
+S:\UPS -- Training\Notes\Demos\AccessDemo\obj\Debug\net10.0\refint\AccessDemo.dll
+S:\UPS -- Training\Notes\Demos\AccessDemo\obj\Debug\net10.0\AccessDemo.pdb
+S:\UPS -- Training\Notes\Demos\AccessDemo\obj\Debug\net10.0\AccessDemo.genruntimeconfig.cache
+S:\UPS -- Training\Notes\Demos\AccessDemo\obj\Debug\net10.0\ref\AccessDemo.dll
