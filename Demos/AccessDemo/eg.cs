@@ -1,5 +1,7 @@
 using System;
 
+namespace AccessDemo
+{
 public class Example
 {
     public void PublicMethod()
@@ -25,5 +27,6 @@ public class Example
     internal protected void InternalProtectedMethod()
     {
         Console.WriteLine("This is an internal protected method.");
+    }
     }
 }

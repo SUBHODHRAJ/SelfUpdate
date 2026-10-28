@@ -1,0 +1,15 @@
+S:\UPS -- Training\Notes\Demos\PartialPgm\bin\Debug\net10.0\PartialPgm.exe
+S:\UPS -- Training\Notes\Demos\PartialPgm\bin\Debug\net10.0\PartialPgm.deps.json
+S:\UPS -- Training\Notes\Demos\PartialPgm\bin\Debug\net10.0\PartialPgm.runtimeconfig.json
+S:\UPS -- Training\Notes\Demos\PartialPgm\bin\Debug\net10.0\PartialPgm.dll
+S:\UPS -- Training\Notes\Demos\PartialPgm\bin\Debug\net10.0\PartialPgm.pdb
+S:\UPS -- Training\Notes\Demos\PartialPgm\obj\Debug\net10.0\PartialPgm.GeneratedMSBuildEditorConfig.editorconfig
+S:\UPS -- Training\Notes\Demos\PartialPgm\obj\Debug\net10.0\PartialPgm.AssemblyInfoInputs.cache
+S:\UPS -- Training\Notes\Demos\PartialPgm\obj\Debug\net10.0\PartialPgm.AssemblyInfo.cs
+S:\UPS -- Training\Notes\Demos\PartialPgm\obj\Debug\net10.0\PartialPgm.csproj.CoreCompileInputs.cache
+S:\UPS -- Training\Notes\Demos\PartialPgm\obj\Debug\net10.0\PartialPgm.sourcelink.json
+S:\UPS -- Training\Notes\Demos\PartialPgm\obj\Debug\net10.0\PartialPgm.dll
+S:\UPS -- Training\Notes\Demos\PartialPgm\obj\Debug\net10.0\refint\PartialPgm.dll
+S:\UPS -- Training\Notes\Demos\PartialPgm\obj\Debug\net10.0\PartialPgm.pdb
+S:\UPS -- Training\Notes\Demos\PartialPgm\obj\Debug\net10.0\PartialPgm.genruntimeconfig.cache
+S:\UPS -- Training\Notes\Demos\PartialPgm\obj\Debug\net10.0\ref\PartialPgm.dll
