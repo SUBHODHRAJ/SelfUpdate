@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PartialPgm")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f82186318c75918050f48b09d2d012b7ba1b5fab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e91f21b11b85e89032408f4cf1026d24bb4190dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("PartialPgm")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PartialPgm")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
