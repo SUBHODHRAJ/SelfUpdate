@@ -1,5 +1,4 @@
 using System;
-
 class Test
 {
     static void Main(string[] args)
@@ -26,7 +25,6 @@ static class Calculator
         return a * b;
     }
 }
-
 sealed class FinalClass
 {
     public void Display()
@@ -38,7 +36,3 @@ sealed class FinalClass
         Console.WriteLine($"Sum: {sum}, Difference: {difference}, Product: {product}");
     }
 }
-
-
-
-
