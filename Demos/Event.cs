@@ -22,13 +22,14 @@ class Button
     static void Main(string[] args)
     {
         Button btn = new Button();
-
+    
         btn.OnClick += () =>
         {
             Console.WriteLine("Event executed!");
         };
         btn.ClickButton();
-        
+        Console.BackgroundColor = ConsoleColor.red;
+
         Console.WriteLine("Clicking the button...");
         
     }
