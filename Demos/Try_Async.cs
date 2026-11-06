@@ -4,11 +4,11 @@ class Program
 {
     public static async Task OnlineClass(CancellationToken token)
     {
-        for (int i = 1; i <= 10; i++)
+        for (int i = 1; i <= 60; i++)
         {
             token.ThrowIfCancellationRequested();
-            Console.WriteLine("Online class running... " + i);
-            await Task.Delay(2000,token);
+            Console.WriteLine("Online class running for " + i + " minutes");
+            await Task.Delay(1000,token);
         }
 
         Console.WriteLine("Online class completed");
@@ -18,7 +18,7 @@ class Program
     {
         CancellationTokenSource cts = new CancellationTokenSource();
         Console.WriteLine("Online class started");
-        Console.WriteLine("Press L or C to apply leave and cancel the online class");
+        Console.WriteLine("Press C to cancel the online class");
         Task key = Task.Run(() =>
         {
             while (!cts.IsCancellationRequested)
