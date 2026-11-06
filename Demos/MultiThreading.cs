@@ -3,41 +3,40 @@ using System.Threading;
 
 class MultiThread
 {
-    public void Testing1()
+    static object obj = new object();
+
+    public void Test1()
     {
-        Console.WriteLine("Testing1");
+        lock (obj)
+        {
+            Console.WriteLine("Thread 1");
+            Thread.Sleep(1000);
+            Console.WriteLine("Thread 1 completed");
+        }
     }
 
-    public void Testing2()
+    public void Test2()
     {
-        Console.WriteLine("Testing2");
+        Console.WriteLine("Thread 2");
     }
 
-    public void Testing3()
-    {
-        Console.WriteLine("Testing3");
-    }
-
-    public static void Main(string[] args)
+    static void Main()
     {
         MultiThread mt = new MultiThread();
 
-        Thread t1 = new Thread(mt.Testing1);
-        Thread t2 = new Thread(mt.Testing2);
-        Thread t3 = new Thread(mt.Testing3);
-        Console.WriteLine("Starting threads...");
+        Thread t1 = new Thread(mt.Test1);
+        Thread t2 = new Thread(mt.Test2);
+
+        t1.Priority = ThreadPriority.Highest;
+
         t1.Start();
-        Thread.Sleep(1000);
-        Console.WriteLine("Starting thread 2...");
+        Thread.Sleep(500);
+
         t2.Start();
 
-        Thread.Sleep(1000);
-        Console.WriteLine("Starting thread 3...");
-        t3.Start();
         t1.Join();
         t2.Join();
-        t3.Join();
 
-        Console.WriteLine("All threads completed!");
+        Console.WriteLine("Completed");
     }
 }
