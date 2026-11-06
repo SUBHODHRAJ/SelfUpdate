@@ -33,8 +33,6 @@ class Shopping
         string? jdata = File.ReadAllText("Shop.json");
         
         Shop? result = JsonSerializer.Deserialize<Shop>(jdata, options);
-        StreamWriter sw = new StreamWriter("Shop.txt");
-
         Console.WriteLine("\nDeserialized Data:");
         
         if (result != null)
@@ -42,11 +40,7 @@ class Shopping
             foreach (Product p in result.items)
             {
                 Console.WriteLine($"Name: {p.name}, Price: {p.price}, Quantity: {p.quantity}");
-                sw.WriteLine(text);
             }
-            
         }
-        sw.Close();
-        Console.WriteLine("Txt file created successfully!");
     }
 }
