@@ -7,6 +7,7 @@ class Student
     {
         StreamWriter sw = new StreamWriter("test.txt", true);
         sw.WriteLine(data);
+        sw.WriteLine("-----------------------------------------------------------------------"); 
         sw.Close();
     }
     static void ReadStudent()
