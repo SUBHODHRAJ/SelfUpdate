@@ -17,7 +17,7 @@ class AdoDotNet
             Console.WriteLine("4. DELETE");
 
             Console.Write("Enter your choice: ");
-            int choice = int.Parse(Console.ReadLine());
+            var choice = int.Parse(Console.ReadLine() ?? string.Empty);
 
             //================= INSERT OPERATION =================
             if (choice == 1)
@@ -29,7 +29,7 @@ class AdoDotNet
                     Console.WriteLine("Connection successful!");
 
                     Console.Write("Enter the number of records to insert: ");
-                    int n = int.Parse(Console.ReadLine());
+                    var n = int.Parse(Console.ReadLine() ?? string.Empty);
 
                     for (int i = 0; i < n; i++)
                     {
@@ -43,7 +43,7 @@ class AdoDotNet
                         var dept = Console.ReadLine();
 
                         Console.Write("Enter marks: ");
-                        int marks = int.Parse(Console.ReadLine());
+                        var marks = int.Parse(Console.ReadLine() ?? string.Empty);
 
                         var query = "INSERT INTO student(name, email, department, marks) VALUES(@name, @email, @department, @marks)";
 
@@ -78,7 +78,7 @@ class AdoDotNet
                     var dept = Console.ReadLine();
 
                     Console.Write("Enter new marks: ");
-                    int marks = int.Parse(Console.ReadLine());
+                    var marks = int.Parse(Console.ReadLine() ?? string.Empty);
 
                     var query = "UPDATE student SET department = @department, marks = @marks WHERE email = @email";
 
