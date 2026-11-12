@@ -23,7 +23,7 @@ class AdoDotNet
             var choice = int.Parse(Console.ReadLine() ?? string.Empty);
 
             //================= INSERT OPERATION =================
-            if (choice == 1)
+        if (choice == 1)
             {
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
@@ -65,9 +65,34 @@ class AdoDotNet
                     }
                 }
             }
+            //================= SELECT OPERATION =================
+        else if (choice == 7)
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionString))
+                {
+                    Console.WriteLine("Attempting to connect to the database...");
+                    con.Open();
+                    Console.WriteLine("Connection successful!");
+
+                    var query = "SELECT * FROM student WHERE name LIKE 'A%' OR name LIKE 'E%' OR name LIKE 'I%' OR name LIKE 'O%' OR name LIKE 'U%' ORDER BY id ASC";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine(
+                                    $"ID: {reader["id"]}, Name: {reader["name"]}, Email: {reader["email"]}, Department: {reader["department"]}, Marks: {reader["marks"]}"
+                                );
+                            }
+                        }
+                    }
+                }
+            }
 
             //================= UPDATE OPERATION =================
-            else if (choice == 2)
+        else if (choice == 2)
             {
                 Console.WriteLine("========== UPDATE OPERATION ==========");
 
@@ -262,7 +287,7 @@ class AdoDotNet
                     con.Open();
                     Console.WriteLine("Connection successful!");
 
-                    var query = "SELECT * FROM student WHERE name LIKE 'A%' OR name LIKE 'E%' OR name LIKE 'I%' OR name LIKE 'O%' OR name LIKE 'U%' ORDER BY id ASC";
+                    var query = "SELECT * FROM student WHERE name LIKE 'A%' OR name LIKE 'E%' OR name LIKE 'I%' OR name LIKE 'O%' OR name LIKE 'U%' OR name LIKE 'a%' OR name LIKE 'e%' OR name LIKE 'i%' OR name LIKE 'o%' OR name LIKE 'u%' ORDER BY id ASC";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, con))
                     {
