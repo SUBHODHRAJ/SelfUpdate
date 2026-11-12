@@ -10,107 +10,157 @@ class AdoDotNet
 
         try
         {
-            /*using (MySqlConnection con = new MySqlConnection(connectionString))
+            Console.WriteLine("========== STUDENT MANAGEMENT ==========");
+            Console.WriteLine("1. INSERT");
+            Console.WriteLine("2. UPDATE");
+            Console.WriteLine("3. READ");
+            Console.WriteLine("4. DELETE");
+
+            Console.Write("Enter your choice: ");
+            int choice = int.Parse(Console.ReadLine());
+
+            //================= INSERT OPERATION =================
+            if (choice == 1)
             {
-
-                 ================= INSERT OPERATION =================
-
-                Console.WriteLine("Attempting to connect to the database");
-                con.Open();
-                Console.WriteLine("Connection successful!");
-
-                Console.WriteLine("Enter the number of records to insert:");
-                var n = int.Parse(Console.ReadLine());
-
-                var name = "";
-                var email = "";
-                var dept = "";
-                var marks = 100;
-
-                for (int i = 0; i < n; i++)
+                using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
-                    Console.Write("Enter name : ");
-                    name = Console.ReadLine();
+                    Console.WriteLine("Attempting to connect to the database...");
+                    con.Open();
+                    Console.WriteLine("Connection successful!");
 
-                    Console.Write("Enter email : ");
-                    email = Console.ReadLine();
+                    Console.Write("Enter the number of records to insert: ");
+                    int n = int.Parse(Console.ReadLine());
 
-                    Console.Write("Enter department : ");
-                    dept = Console.ReadLine();
-
-                    var query = "INSERT INTO student(name, email, department, marks) VALUES(@name, @email, @department, @marks)";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    for (int i = 0; i < n; i++)
                     {
-                        cmd.Parameters.AddWithValue("@name", name);
-                        cmd.Parameters.AddWithValue("@email", email);
-                        cmd.Parameters.AddWithValue("@department", dept);
-                        cmd.Parameters.AddWithValue("@marks", marks);
+                        Console.Write("Enter name: ");
+                        var name = Console.ReadLine();
 
-                        cmd.ExecuteNonQuery();
+                        Console.Write("Enter email: ");
+                        var email = Console.ReadLine();
 
-                        Console.WriteLine("Record inserted successfully!");
-                    }
-                }
-             }*/
+                        Console.Write("Enter department: ");
+                        var dept = Console.ReadLine();
 
-            /* using (MySqlConnection con = new MySqlConnection(connectionString))
-             {
-                 UPDATE OPERATION
+                        Console.Write("Enter marks: ");
+                        int marks = int.Parse(Console.ReadLine());
 
-                 Console.WriteLine("Attempting to connect to the database");
-                 con.Open();
-                 Console.WriteLine("Connection successful!");
+                        var query = "INSERT INTO student(name, email, department, marks) VALUES(@name, @email, @department, @marks)";
 
-                 Console.Write("Enter student email to update: ");
-                 var email = Console.ReadLine();
-
-                 Console.Write("Enter new department: ");
-                 var dept = Console.ReadLine();
-
-                 Console.Write("Enter new marks: ");
-                 var marks = int.Parse(Console.ReadLine());
-
-                 var query = "UPDATE student SET department = @department, marks = @marks WHERE email = @email";
-
-                 using (MySqlCommand cmd = new MySqlCommand(query, con))
-                 {
-                     cmd.Parameters.AddWithValue("@department", dept);
-                     cmd.Parameters.AddWithValue("@marks", marks);
-                     cmd.Parameters.AddWithValue("@email", email);
-
-                     int rows = cmd.ExecuteNonQuery();
-
-                     if (rows > 0)
-                     {
-                         Console.WriteLine("Record updated successfully!");
-                     }
-                     else
-                     {
-                         Console.WriteLine("Student record not found!");
-                     }
-                 } 
-                }
-            */
-
-
-            using (MySqlConnection con = new MySqlConnection(connectionString))
-            {
-                //Read Operation
-                Console.WriteLine("Attempting to connect to the database");
-                con.Open();
-                Console.WriteLine("Connection successful!");
-                var rquery = "SELECT * FROM student";
-                using (MySqlCommand cmd = new MySqlCommand(rquery, con))
-                {
-                    using var red = cmd.ExecuteReader();
-                    {
-                        while (red.Read())
+                        using (MySqlCommand cmd = new MySqlCommand(query, con))
                         {
-                            Console.WriteLine($"ID: {red["id"]}, Name: {red["name"]}, Email: {red["email"]}, Department: {red["department"]}, Marks: {red["marks"]}");
+                            cmd.Parameters.AddWithValue("@name", name);
+                            cmd.Parameters.AddWithValue("@email", email);
+                            cmd.Parameters.AddWithValue("@department", dept);
+                            cmd.Parameters.AddWithValue("@marks", marks);
+
+                            cmd.ExecuteNonQuery();
+
+                            Console.WriteLine("Record inserted successfully!");
                         }
                     }
                 }
+            }
+
+            //================= UPDATE OPERATION =================
+            else if (choice == 2)
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionString))
+                {
+                    Console.WriteLine("Attempting to connect to the database...");
+                    con.Open();
+                    Console.WriteLine("Connection successful!");
+
+                    Console.Write("Enter student email to update: ");
+                    var email = Console.ReadLine();
+
+                    Console.Write("Enter new department: ");
+                    var dept = Console.ReadLine();
+
+                    Console.Write("Enter new marks: ");
+                    int marks = int.Parse(Console.ReadLine());
+
+                    var query = "UPDATE student SET department = @department, marks = @marks WHERE email = @email";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@department", dept);
+                        cmd.Parameters.AddWithValue("@marks", marks);
+                        cmd.Parameters.AddWithValue("@email", email);
+
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows > 0)
+                        {
+                            Console.WriteLine("Record updated successfully!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Student record not found!");
+                        }
+                    }
+                }
+            }
+
+            //================= READ OPERATION =================
+            else if (choice == 3)
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionString))
+                {
+                    Console.WriteLine("Attempting to connect to the database...");
+                    con.Open();
+                    Console.WriteLine("Connection successful!");
+
+                    var query = "SELECT * FROM student ORDER BY id ASC";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        using (var red = cmd.ExecuteReader())
+                        {
+                            while (red.Read())
+                            {
+                               Console.WriteLine($"ID: {red["id"]}, Name: {red["name"]}, Email: {red["email"]}, Department: {red["department"]}, Marks: {red["marks"]}");
+                            }
+                        }
+                    }
+                }
+            }
+
+            //================= DELETE OPERATION =================
+            else if (choice == 4)
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionString))
+                {
+                    Console.WriteLine("Attempting to connect to the database...");
+                    con.Open();
+                    Console.WriteLine("Connection successful!");
+
+                    Console.Write("Enter student email to delete: ");
+                    var email = Console.ReadLine();
+
+                    var query = "DELETE FROM student WHERE email = @email";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@email", email);
+
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows > 0)
+                        {
+                            Console.WriteLine("Record deleted successfully!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Student record not found!");
+                        }
+                    }
+                }
+            }
+
+            else
+            {
+                Console.WriteLine("Invalid choice! Please select 1, 2, 3 or 4.");
             }
         }
         catch (Exception ex)
